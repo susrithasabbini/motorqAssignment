@@ -1,5 +1,10 @@
-const AdminPage = () => {
-  return <div>Admin page</div>;
-};
+"use client";
+import AddVehicleForm from "./AddVehicleForm";
 
-export default AdminPage;
+export default function AdminPage() {
+  return (
+    <div>
+      <AddVehicleForm />
+    </div>
+  );
+}

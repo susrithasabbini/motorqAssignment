@@ -32,7 +32,7 @@ model Vehicle {
   model     String
   year      Int
   vinPrefix String   @unique
-  createdAt DateTime
+  createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   enrollmentRequests EnrollmentRequest[]
@@ -48,7 +48,7 @@ model EnrollmentRequest {
   id                  String    @id @default(auto()) @map("_id") @db.ObjectId
   userId              String    @db.ObjectId
   vehicleId           String    @db.ObjectId
-  vin                 String
+  vin                 String    @unique
   licensePlateNumber  String?
   status              Status    @default(PENDING)
   enrollmentTimeStamp DateTime  @default(now())
